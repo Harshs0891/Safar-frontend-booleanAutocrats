@@ -162,6 +162,7 @@ import { userLoggedIn } from '../../signup-page/Login';
                     <input
                     type={'text'}
                     value={userLoggedIn}
+                    disabled="true"
                     // onChange={(e)=>
                     //     setuserName(e.target.value)
                     // }

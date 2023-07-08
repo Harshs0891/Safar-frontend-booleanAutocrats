@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
 import { useState } from "react";
 import axios from "axios";
+import { userLoggedIn } from "../../signup-page/Login";
 
 function Book() {
   const handleNameInvalid = (event) => {
@@ -35,7 +36,7 @@ function Book() {
     const [userPhone,setUserPhone]=useState();
     const [userDestination,setUserDestination]=useState("");
     const [userCount,setUserCount]=useState(1);
-    const [userName,setuserName]=useState("");
+    const [userName,setuserName]=useState(userLoggedIn);
     const [userLeavingDate,setUserLeavingDate]=useState("");
 
     const onSubmit = async (e)=>{
@@ -166,11 +167,12 @@ function Book() {
               <span>UserName : </span>
               <input type="text"
                 required 
-                value={userName}
+                value={userLoggedIn}
+                disabled="true"
                 placeholder="Enter your login user name"
-                onChange={(e)=>
-                    setuserName(e.target.value)
-                }    
+                // onChange={(e)=>
+                //     setuserName(e.target.value)
+                // }    
                 />
             </div>
 

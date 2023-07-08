@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { userLoggedIn } from '../../signup-page/Login';
  
  const EditUser = () => {
 
@@ -14,7 +15,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
     const [userPhone,setUserPhone]=useState();
     const [userDestination,setUserDestination]=useState("");
     const [userCount,setUserCount]=useState(1);
-    const [userName,setuserName]=useState("");
+    const [userName,setuserName]=useState(userLoggedIn);
     const [userLeavingDate,setUserLeavingDate]=useState("");
 
     const onSubmit=async (e)=>{
@@ -160,10 +161,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
                     </label>
                     <input
                     type={'text'}
-                    value={userName}
-                    onChange={(e)=>
-                        setuserName(e.target.value)
-                    }
+                    value={userLoggedIn}
+                    // onChange={(e)=>
+                    //     setuserName(e.target.value)
+                    // }
                     className='form-control'
                     placeholder="Enter your email address"/>
                 </div>
